@@ -1,0 +1,166 @@
+/* Assuming you manually handle @imported variables and mixins in CSS */
+
+/* .navbar class */
+.navbar {
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Media query for small screen (sm) */
+@media (max-width: 768px) {
+  /* sm */
+  .navbar {
+    padding: 10px 20px;
+  }
+}
+
+/* .navbar img */
+.navbar img {
+  width: 100px;
+  cursor: pointer;
+}
+
+/* .navbar_search class */
+.navbar_search {
+  border: 1px solid #808080; /* Assuming $grey is #808080 */
+  border-radius: 30px;
+  height: 50px;
+  padding: 0px 20px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* .navbar_search input */
+.navbar_search input {
+  border: none;
+  outline: none;
+}
+
+/* Hover effect for .navbar_search */
+.navbar_search:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Assuming @include shadow applies a box-shadow */
+}
+
+/* Media query for large screens (lg) */
+@media (min-width: 1024px) {
+  /* lg */
+  .navbar_search {
+    display: none;
+  }
+}
+
+/* .navbar_right class */
+.navbar_right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* .host class inside .navbar_right */
+.navbar_right .host {
+  text-decoration: none;
+  color: #0000ff; /* Assuming $blue is #0000FF */
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Hover effect for .host */
+.navbar_right .host:hover {
+  color: black; /* Assuming $pinkred is #FF1493 */
+}
+
+/* Media query for small screen (sm) */
+@media (max-width: 768px) {
+  /* sm */
+  .navbar_right .host {
+    display: none;
+  }
+}
+
+/* .navbar_right_account class */
+.navbar_right_account {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid #808080; /* Assuming $grey is #808080 */
+  border-radius: 30px;
+  display: flex;
+  gap: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Hover effect for .navbar_right_account */
+.navbar_right_account:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Assuming @include shadow applies a box-shadow */
+}
+
+/* .navbar_right_account img */
+.navbar_right_account img {
+  width: 40px;
+  height: 40px;
+}
+
+/* .navbar_right_accountmenu class */
+.navbar_right_accountmenu {
+  position: absolute;
+  background-color: white;
+  right: 60px;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 10px 0;
+  border: 1px solid #d3d3d3; /* Assuming $lightgrey is #D3D3D3 */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Assuming @include shadow applies a box-shadow */
+  z-index: 9999;
+}
+
+/* Media query for small screens (sm) */
+@media (max-width: 768px) {
+  /* sm */
+  .navbar_right_accountmenu {
+    right: 20px;
+  }
+}
+
+/* .navbar_right_accountmenu a */
+.navbar_right_accountmenu a {
+  width: 100%;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #0000ff; /* Assuming $blue is #0000FF */
+  font-weight: 700;
+}
+
+/* Hover effect for links in .navbar_right_accountmenu */
+.navbar_right_accountmenu a:hover {
+  color: black; /* Assuming $pinkred is #FF1493 */
+  background-color: rgba(217, 213, 213, 0.2);
+}
+
+.navbar_logo {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000; /* or any color you prefer */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect (optional) */
+.navbar_logo:hover {
+  color: black; /* optional hover color, like your $pinkred */
+}
+
+@media (max-width: 768px) {
+  .navbar_logo {
+    font-size: 20px;
+  }
+}

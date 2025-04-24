@@ -1,0 +1,27 @@
+.category-list {
+  padding: 50px 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+@media (max-width: 600px) {
+  .category-list {
+    padding: 50px 20px;
+  }
+}
+
+.listings {
+  padding: 0 60px 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+@media (max-width: 1024px) {
+  .listings {
+    padding: 0 20px 120px;
+  }
+}

@@ -1,0 +1,106 @@
+/* Assuming you manually handle @imported variables and mixins in CSS */
+
+/* .register class */
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../assets/stylish-elegant-woman-car-salon.jpg") center;
+  background-size: cover;
+}
+
+/* .register_content class */
+.register_content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 40%;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+}
+
+/* Media queries for different screen sizes */
+@media (min-width: 1024px) {
+  /* lg */
+  .register_content {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* mm */
+  .register_content {
+    width: 80%;
+  }
+}
+
+/* .register_content_form class */
+.register_content_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Input field */
+.register_content_form input {
+  width: 100%;
+  padding: 7px 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  text-align: center;
+  color: white;
+}
+
+.register_content_form input:not(:placeholder-shown):focus {
+  background: transparent; /* or background: none; */
+}
+
+.register_content_form input::placeholder {
+  color: white;
+}
+
+/* Label */
+.register_content_form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.register_content_form label img {
+  width: 25px;
+}
+
+/* Button */
+.register_content_form button {
+  margin-top: 15px;
+  width: 50%; /* Assuming this comes from your `buttonStyle` mixin */
+}
+
+.register_content_form button:hover {
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+}
+
+/* Anchor tag */
+.register_content a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.register_content a:hover {
+  text-decoration: underline;
+}
