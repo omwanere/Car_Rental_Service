@@ -8,49 +8,21 @@ import authRoute from "./routes/auth.route.js";
 import listingRoute from "./routes/listing.route.js";
 import bookingRoute from "./routes/booking.route.js";
 import userRoute from "./routes/user.route.js";
-import helmet from "helmet";
-import rateLimit from "express-rate-limit";
-import xss from "xss-clean";
-import mongoSanitize from "express-mongo-sanitize";
 
 dotenv.config({});
 
 const app = express();
 
-// Security Middleware
-app.use(helmet()); // Set security HTTP headers
-app.use(xss()); // Prevent XSS attacks
-app.use(mongoSanitize()); // Prevent NoSQL injection
-
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-});
-app.use(limiter);
-
-// CORS Configuration
-const allowedOrigins = process.env.NODE_ENV === 'production' 
-  ? [process.env.PRODUCTION_URL] 
-  : ['http://localhost:5173'];
+app.use(express.json());
+app.use(express.static("public"));
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: "http://localhost:5173",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
-  exposedHeaders: ["Content-Range", "X-Content-Range"],
-  maxAge: 600 // Cache preflight requests for 10 minutes
 };
-
 app.use(cors(corsOptions));
-
 const PORT = process.env.PORT || 5000;
 
 export const instance = new Razorpay({
